@@ -4,5 +4,37 @@
 
 :root {
   --primary-color: #4f46e5;
+  --secondary-color: #f4f4ff;
   --dark-color: #141e30;
+  /* --dark-color: #3f3d56; */
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+*::selection {
+  background: #4f46e5; /* WebKit/Blink Browsers */
+  color: white;
+}
+*::-moz-selection {
+  background: #4f46e5; /* Gecko Browsers */
+  color: white;
 }

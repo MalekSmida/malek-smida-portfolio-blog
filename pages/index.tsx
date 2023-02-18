@@ -1,38 +1,40 @@
+// node modules
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
 // local files
-import { PostCard } from '../components';
-import { Main } from '../containers';
-import { getAllPostsQuery } from '../services/queries';
-import { sanityClient } from '../services/sanity';
-import { Post } from '../typings';
+// import styles from "../styles/Home.module.css";
+import { Footer, NavHeader, Intro, About, Career, Projects, Skills } from '../sections';
+import { ProgressScrollBar, BackToTopButton } from '../components';
+import { useShowBackToTop } from '../hooks';
 
-// typing
-interface PropsHome {
-  posts: Post[];
-}
-
-export default function Home({ posts = [] }: PropsHome) {
+const Home: NextPage = () => {
+  const { showArrowButton } = useShowBackToTop();
   return (
-    <Main>
-      <div
-        className="grid grid-cols-1 gap-3 p-6 sm:grid-cols-2 md:gap-6 lg:grid-cols-3"
-        data-testid="posts-container"
-      >
-        {posts.map((post) => (
-          <PostCard post={post} key={post._id} />
-        ))}
-      </div>
-    </Main>
+    <div>
+      <Head>
+        <title>Malek Smida | Software Engineer | Profile and CV</title>
+        <meta
+          name="description"
+          content="Malek Smida, a passionate, agile-minded Software Engineer who is scrupulous about the details. Manage full software development life-cycle of Mobile and Web apps"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+        <ProgressScrollBar />
+        <NavHeader />
+        <Intro />
+        <Career />
+        <About />
+        <Projects />
+        <Skills />
+        {showArrowButton && <BackToTopButton />}
+      </main>
+
+      <Footer />
+    </div>
   );
-}
-
-// server side rendering of home page
-export const getServerSideProps = async () => {
-  // fetch all posts
-  const posts = await sanityClient.fetch(getAllPostsQuery);
-
-  return {
-    props: {
-      posts,
-    },
-  };
 };
+
+export default Home;

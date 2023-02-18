@@ -41,3 +41,37 @@ export interface AboutBlog {
   title: string;
   description?: string;
 }
+
+// Portfolio
+export interface Experience {
+  _id: string;
+  title: string;
+  company?: string;
+  date: string;
+  position: string;
+  coverPath: string;
+  work: string[];
+}
+
+export interface Project {
+  _id: string;
+  title: string;
+  shortDescription: string;
+  sourceCodeUrl?: string;
+  projectUrl: string;
+  picture: string;
+  detailedDescription: string;
+}
+
+export enum SkillCategoryEnum {
+  Code = 1,
+  Cloud,
+  Tools,
+}
+
+export interface Skill {
+  _id: string;
+  localPath: string;
+  label: string;
+  category: SkillCategoryEnum;
+}

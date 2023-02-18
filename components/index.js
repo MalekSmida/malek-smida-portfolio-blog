@@ -5,3 +5,7 @@ export { default as CommentForm } from './CommentForm';
 export { default as NavHeader } from './NavHeader';
 export { default as Footer } from './Footer';
 export { default as Banner } from './Banner';
+export { default as ExperienceCard } from './ExperienceCard';
+export { default as ProgressScrollBar } from './ProgressScrollBar';
+export { default as ProjectCard } from './ProjectCard';
+export { default as SkillBlock } from './SkillBlock';
