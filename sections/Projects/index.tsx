@@ -1,5 +1,3 @@
-// node modules
-
 // local files
 import { projects } from '../../data';
 import { Project } from '../../typings';
@@ -15,18 +13,9 @@ function Projects() {
           <p className="mt-4 text-gray-500">Open source projects</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 mt-8 md:gap-12 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
           {projects.map((project: Project) => (
-            <ProjectCard
-              key={project._id}
-              _id={project._id}
-              title={project.title}
-              projectUrl={project.projectUrl}
-              picture={project.picture}
-              sourceCodeUrl={project.sourceCodeUrl}
-              shortDescription={project.shortDescription}
-              detailedDescription={project.detailedDescription}
-            />
+            <ProjectCard key={project._id} project={project} />
           ))}
         </div>
       </div>

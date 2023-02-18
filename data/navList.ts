@@ -4,7 +4,7 @@ const navList: Array<NavButtonProps> = [
   {
     _id: '1',
     title: 'Posts',
-    pageLink: '/',
+    pageLink: '/blog',
   },
   {
     _id: '2',

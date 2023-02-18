@@ -1,22 +1,28 @@
 // node modules
-import Link from 'next/link';
 import Image from 'next/image';
 
 // local files
 import { Project } from '../../typings';
 
-function ProjectCard({
-  _id,
-  title,
-  projectUrl,
-  picture,
-  sourceCodeUrl,
-  shortDescription,
-  detailedDescription
-}: Project) {
+interface PropsProjectCard {
+  project: Project;
+}
+
+/**
+ * Project card shown in home under Projects section
+ */
+function ProjectCard({ project }: PropsProjectCard) {
+  const { title, projectUrl, picture, sourceCodeUrl, shortDescription } =
+    project;
+
   return (
     <div className="block overflow-hidden">
-      <a href={projectUrl} target="_blank" rel="noopener noreferrer" title="Open project">
+      <a
+        href={projectUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Open project"
+      >
         <Image
           className="transition-transform duration-300 ease-in-out hover:scale-105"
           src={picture}
@@ -38,7 +44,8 @@ function ProjectCard({
             target="_blank"
             rel="noopener noreferrer"
             title="Open source code"
-            className="inline-block pb-1 mt-4 text-sm font-medium text-indigo-600 border-b border-indigo-500 cursor-pointer">
+            className="mt-4 inline-block cursor-pointer border-b border-indigo-500 pb-1 text-sm font-medium text-indigo-600"
+          >
             Source code
             <span className="ml-2" aria-hidden="true">
               &rarr;

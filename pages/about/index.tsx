@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 // local files
 import { Main } from '../../containers';
-import aboutList from '../../data/aboutBlogList';
+import { aboutBlogList } from '../../data';
 import { hyperlinks } from '../../utils/contants';
 
 /**
@@ -51,7 +51,7 @@ function About() {
           Wanderer blog is about:
         </h1>
         <ul className="list-disc space-y-2">
-          {aboutList.map((item) => (
+          {aboutBlogList.map((item) => (
             <li key={item._id}>
               <span className="font-semibold">{item.title}</span>
               {item.description}

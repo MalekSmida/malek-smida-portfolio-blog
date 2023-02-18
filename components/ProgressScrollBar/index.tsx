@@ -1,38 +1,18 @@
-// node modules
-import { useState, useEffect } from 'react';
+// local files
+import { useMesureVerticalScroll } from '../../hooks';
 
+/**
+ * Progress bar animation shown in top of page when scrolling
+ */
 function ProgressScrollBar() {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition === 0) {
-        setProgress(0);
-        return;
-      }
-
-      const pageHeight = document.body.offsetHeight;
-      const screenHeight = window.screen.height;
-
-      // 0 < scrollRate < 1
-      const scrollRate = (scrollPosition + screenHeight) / pageHeight;
-
-      // make screenheight proportionel to the scroll position
-      const screenHeightByRate = screenHeight * scrollRate;
-
-      const finalEquation = ((scrollPosition + screenHeightByRate) / pageHeight) * 100;
-
-      setProgress(finalEquation);
-    });
-  });
-
+  const { scrollProgress } = useMesureVerticalScroll();
   return (
     <span
-      className="fixed top-0 left-0 h-1 rounded-r bg-primary-color z-50 ease-in-out duration-300"
+      className="fixed top-0 left-0 z-50 h-1 rounded-r bg-primary-color duration-300 ease-in-out"
       style={{
-        width: `${progress}%`
-      }}></span>
+        width: `${scrollProgress}%`,
+      }}
+    ></span>
   );
 }
 

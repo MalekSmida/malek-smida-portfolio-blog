@@ -63,7 +63,9 @@ export interface Project {
   detailedDescription: string;
 }
 
-export enum SkillCategoryEnum {
+// can not export enum in Ts
+// only use it in same file
+enum SkillCategoryEnum {
   Code = 1,
   Cloud,
   Tools,
