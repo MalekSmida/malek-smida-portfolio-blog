@@ -21,13 +21,8 @@ const NavHeader: React.FC<PropsNavHeader> = ({ navList }) => {
   const NavButton: React.FC<INavButton> = ({ title, link }) => (
     <li>
       {link.type === 'anchor' ? (
-        <AnchorLink
-          href={link.href}
-          className="group relative inline-block cursor-pointer overflow-hidden px-4 py-2 focus:outline-none"
-        >
-          <span className="absolute inset-y-0 left-0 w-[0px] bg-primary-color transition-all duration-300 group-hover:w-full group-active:bg-primary-color"></span>
-
-          <span className="relative text-sm font-medium text-primary-color transition-colors group-hover:text-white">
+        <AnchorLink href={link.href}>
+          <span className="relative cursor-pointer select-none text-sm font-medium text-gray-500 transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100">
             {title}
           </span>
         </AnchorLink>
