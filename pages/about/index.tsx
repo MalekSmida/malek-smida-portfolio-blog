@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 // local files
 import { Main } from '../../containers';
-import { aboutBlogList } from '../../data';
+import { aboutBlogList } from '../../constants';
 import { hyperlinks } from '../../utils/contants';
 
 /**

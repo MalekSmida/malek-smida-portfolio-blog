@@ -11,7 +11,7 @@ import {
   ProgressScrollBar,
 } from '../../components';
 import useShowBackToTop from '../../hooks/useShowBackToTop';
-import { navListBlog } from '../../data';
+import { navListBlog } from '../../constants';
 
 // typing
 interface PropsMain {

@@ -2,7 +2,7 @@
 
 // local files
 import { ExperienceCard } from '../../components';
-import { experiences } from '../../data';
+import { experiences } from '../../constants';
 import { Experience } from '../../typings';
 
 function Career() {

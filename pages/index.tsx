@@ -6,7 +6,7 @@ import Head from 'next/head';
 import { Footer, Intro, About, Career, Projects, Skills } from '../sections';
 import { ProgressScrollBar, BackToTopButton, NavHeader } from '../components';
 import { useShowBackToTop } from '../hooks';
-import { navListPortfolio } from '../data';
+import { navListPortfolio } from '../constants';
 
 const Home: NextPage = () => {
   const { showArrowButton } = useShowBackToTop();

@@ -1,5 +1,5 @@
 // local files
-import { projects } from '../../data';
+import { projects } from '../../constants';
 import { Project } from '../../typings';
 import { ProjectCard } from '../../components';
 

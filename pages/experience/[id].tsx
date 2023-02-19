@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 // local files
-import { experiences } from '../../data';
+import { experiences } from '../../constants';
 import { Experience } from '../../typings';
 
 const Experience = () => {
