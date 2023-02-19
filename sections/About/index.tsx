@@ -47,7 +47,7 @@ function About() {
               </div>
               <span className="absolute bottom-32 right-72 h-16 w-16 rounded-full bg-orange-400 transition-transform duration-300 ease-in-out hover:scale-90"></span>
             </div>
-            <div className="absolute bottom-10 max-w-sm rounded-2xl bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 p-1 shadow-xl transition-transform duration-300 ease-in-out hover:scale-105">
+            {/* <div className="absolute bottom-10 max-w-sm rounded-2xl bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 p-1 shadow-xl transition-transform duration-300 ease-in-out hover:scale-105">
               <div className="block rounded-xl bg-white p-6">
                 <blockquote
                   className="text-xs font-semibold text-gray-500"
@@ -58,7 +58,7 @@ function About() {
                   I hope to continue learning and growing.
                 </blockquote>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="relative flex items-center bg-gray-50">
