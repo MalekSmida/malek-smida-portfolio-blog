@@ -8,8 +8,8 @@ import { hyperlinks } from '../../utils/contants';
  */
 function Footer() {
   return (
-    <footer className="w-full bg-gray-900" id="contact">
-      <div className="mx-auto px-4 py-10 sm:px-6 lg:px-8">
+    <footer className="mt-16 w-full bg-gray-900" id="contact">
+      <div className="mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <h3 className="flex justify-center font-medium text-white">Contact</h3>
 
         <ul className="mx-auto mt-6 max-w-xs text-center leading-relaxed text-gray-400">
