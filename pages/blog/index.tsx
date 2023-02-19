@@ -4,6 +4,7 @@ import { Main } from '../../containers';
 import { getAllPostsQuery } from '../../services/queries';
 import { sanityClient } from '../../services/sanity';
 import { Post } from '../../typings';
+import { navListBlog } from '../../constants';
 
 // typing
 interface PropsBlog {
@@ -12,7 +13,12 @@ interface PropsBlog {
 
 export default function Blog({ posts = [] }: PropsBlog) {
   return (
-    <Main>
+    <Main
+      title="Malek Smida | Wanderer Blog"
+      metaDescription="Wanderer blog is about: parable and short stories of wisdom, book summary and quotes, spirituality, ancient philosophy, and social psychology"
+      isBannerVisible
+      navList={navListBlog}
+    >
       <div
         className="grid grid-cols-1 gap-3 p-6 sm:grid-cols-2 md:gap-6 lg:grid-cols-3"
         data-testid="posts-container"

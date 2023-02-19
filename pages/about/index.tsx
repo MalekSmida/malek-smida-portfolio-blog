@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 // local files
 import { Main } from '../../containers';
-import { aboutBlogList } from '../../constants';
+import { aboutBlogList, navListBlog } from '../../constants';
 import { hyperlinks } from '../../utils/contants';
 
 /**
@@ -14,7 +14,12 @@ import { hyperlinks } from '../../utils/contants';
  */
 function About() {
   return (
-    <Main>
+    <Main
+      title="Malek Smida | Wanderer Blog"
+      metaDescription="Wanderer blog is about: parable and short stories of wisdom, book summary and quotes, spirituality, ancient philosophy, and social psychology"
+      isBannerVisible
+      navList={navListBlog}
+    >
       <div className="mx-auto my-10 flex w-full max-w-3xl items-center">
         <div className="relative mr-3 h-44 w-44 rounded-md border-4 object-contain">
           <Image

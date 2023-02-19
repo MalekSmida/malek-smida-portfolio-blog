@@ -3,8 +3,9 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 // local files
-import { experiences } from '../../constants';
+import { experiences, navListPortfolio } from '../../constants';
 import { Experience } from '../../typings';
+import { Main } from '../../containers';
 
 const Experience = () => {
   const router = useRouter();
@@ -16,7 +17,11 @@ const Experience = () => {
   const currentExperience = filterExperiencesById(id as string);
 
   return (
-    <main className="mx-auto flex w-full max-w-6xl flex-col">
+    <Main
+      title="Malek Smida | Software Engineer | Profile, CV and Blog"
+      metaDescription="Malek Smida, a passionate, agile-minded Software Engineer who is scrupulous about the details. Manage full software development life-cycle of Mobile and Web apps"
+      navList={navListPortfolio}
+    >
       {currentExperience && (
         <Image
           src={currentExperience.coverPath}
@@ -45,7 +50,7 @@ const Experience = () => {
           ))}
         </ul>
       </article>
-    </main>
+    </Main>
   );
 };
 

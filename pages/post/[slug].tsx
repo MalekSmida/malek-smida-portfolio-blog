@@ -13,6 +13,7 @@ import {
   getAllSlugsOfPostsQuery,
   getPostBySlugQuery,
 } from '../../services/queries';
+import { navListBlog } from '../../constants';
 
 // typing
 interface PropsPost {
@@ -21,7 +22,11 @@ interface PropsPost {
 
 function Post({ post }: PropsPost) {
   return (
-    <Main hideBanner>
+    <Main
+      title="Malek Smida | Wanderer Blog"
+      metaDescription="Wanderer blog is about: parable and short stories of wisdom, book summary and quotes, spirituality, ancient philosophy, and social psychology"
+      navList={navListBlog}
+    >
       <div className="relative h-48 w-full object-cover">
         <Image
           src={urlFor(post.mainImage).url()!}
