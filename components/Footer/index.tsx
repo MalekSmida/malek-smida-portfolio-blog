@@ -9,7 +9,7 @@ import { hyperlinks } from '../../utils/contants';
 function Footer() {
   return (
     <footer className="w-full bg-gray-900" id="contact">
-      <div className="mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 py-10 sm:px-6 lg:px-8">
         <h3 className="flex justify-center font-medium text-white">Contact</h3>
 
         <ul className="mx-auto mt-6 max-w-xs text-center leading-relaxed text-gray-400">
@@ -139,7 +139,7 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               title="Wanderer blog"
-              className="ml-2 mr-1 cursor-pointer text-primary-color underline"
+              className="ml-2 mr-1 cursor-pointer text-white underline"
             >
               Fork it
             </a>{' '}
