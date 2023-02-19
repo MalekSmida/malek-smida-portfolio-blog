@@ -45,7 +45,7 @@ const NavHeader: React.FC<PropsNavHeader> = ({ navList }) => {
   return (
     <header
       id="header"
-      className="mx-auto hidden h-16 max-w-screen-xl items-center justify-between bg-white px-4 sm:px-6 md:flex lg:px-8"
+      className="mx-auto flex h-16 max-w-screen-xl items-center justify-between bg-white px-4 sm:px-6 lg:px-8"
     >
       <nav aria-labelledby="header-navigation">
         <h2 className="sr-only" id="header-navigation">
