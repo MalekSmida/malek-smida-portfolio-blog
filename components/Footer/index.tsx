@@ -1,5 +1,5 @@
 // local files
-import { hyperlinks } from '../../utils/contants';
+import hyperlinks from '../../utils/hyperlinks';
 
 /**
  * Footer component

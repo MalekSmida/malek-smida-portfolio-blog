@@ -4,7 +4,7 @@ import Image from 'next/image';
 // local files
 import { Main } from '../../containers';
 import { aboutBlogList, navListBlog } from '../../constants';
-import { hyperlinks } from '../../utils/contants';
+import hyperlinks from '../../utils/hyperlinks';
 
 /**
  * About page

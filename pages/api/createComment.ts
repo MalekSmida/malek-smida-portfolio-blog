@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import sanityClient from '@sanity/client';
 
 // local files
-import { feedbackMessages } from '../../utils/contants';
+import feedbackMessages from '../../utils/commentFeedbackMsg';
 
 // Sanity instance
 const config = {
