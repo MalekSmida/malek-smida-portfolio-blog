@@ -3,6 +3,14 @@ import { INavButton } from '../typings';
 const navListBlog: Array<INavButton> = [
   {
     _id: '1',
+    title: 'Portfolio',
+    link: {
+      type: 'route',
+      href: '/',
+    },
+  },
+  {
+    _id: '2',
     title: 'Posts',
     link: {
       type: 'route',
@@ -10,19 +18,11 @@ const navListBlog: Array<INavButton> = [
     },
   },
   {
-    _id: '2',
+    _id: '3',
     title: 'About',
     link: {
       type: 'route',
       href: '/about',
-    },
-  },
-  {
-    _id: '3',
-    title: 'Portfolio',
-    link: {
-      type: 'route',
-      href: '/',
     },
   },
 ];
@@ -78,4 +78,23 @@ const navListPortfolio: Array<INavButton> = [
   },
 ];
 
-export { navListBlog, navListPortfolio };
+const navListExperience: Array<INavButton> = [
+  {
+    _id: '1',
+    title: 'Portfolio',
+    link: {
+      type: 'route',
+      href: '/',
+    },
+  },
+  {
+    _id: '2',
+    title: 'Blog',
+    link: {
+      type: 'route',
+      href: '/blog',
+    },
+  },
+];
+
+export { navListBlog, navListPortfolio, navListExperience };

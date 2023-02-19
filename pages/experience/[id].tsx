@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 // local files
-import { experiences, navListPortfolio } from '../../constants';
+import { experiences, navListExperience } from '../../constants';
 import { Experience } from '../../typings';
 import { Main } from '../../containers';
 
@@ -20,7 +20,7 @@ const Experience = () => {
     <Main
       title="Malek Smida | Software Engineer | Profile, CV and Blog"
       metaDescription="Malek Smida, a passionate, agile-minded Software Engineer who is scrupulous about the details. Manage full software development life-cycle of Mobile and Web apps"
-      navList={navListPortfolio}
+      navList={navListExperience}
     >
       {currentExperience && (
         <Image
