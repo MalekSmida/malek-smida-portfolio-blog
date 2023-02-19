@@ -3,10 +3,10 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 // local files
-// import styles from "../styles/Home.module.css";
-import { Footer, NavHeader, Intro, About, Career, Projects, Skills } from '../sections';
-import { ProgressScrollBar, BackToTopButton } from '../components';
+import { Footer, Intro, About, Career, Projects, Skills } from '../sections';
+import { ProgressScrollBar, BackToTopButton, NavHeader } from '../components';
 import { useShowBackToTop } from '../hooks';
+import { navListPortfolio } from '../data';
 
 const Home: NextPage = () => {
   const { showArrowButton } = useShowBackToTop();
@@ -21,9 +21,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+      <main className="mx-auto flex w-full max-w-screen-xl flex-col items-center px-4 sm:px-6">
         <ProgressScrollBar />
-        <NavHeader />
+        <NavHeader navList={navListPortfolio} />
         <Intro />
         <Career />
         <About />

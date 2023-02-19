@@ -1,21 +1,81 @@
-import { NavButtonProps } from '../components/NavHeader';
+import { INavButton } from '../typings';
 
-const navList: Array<NavButtonProps> = [
+const navListBlog: Array<INavButton> = [
   {
     _id: '1',
     title: 'Posts',
-    pageLink: '/blog',
+    link: {
+      type: 'route',
+      href: '/blog',
+    },
   },
   {
     _id: '2',
     title: 'About',
-    pageLink: '/about',
+    link: {
+      type: 'route',
+      href: '/about',
+    },
   },
   {
     _id: '3',
     title: 'Portfolio',
-    pageLink: '/',
+    link: {
+      type: 'route',
+      href: '/',
+    },
   },
 ];
 
-export default navList;
+const navListPortfolio: Array<INavButton> = [
+  {
+    _id: '1',
+    title: 'Career',
+    link: {
+      type: 'anchor',
+      href: '#career',
+    },
+  },
+  {
+    _id: '2',
+    title: 'About',
+    link: {
+      type: 'anchor',
+      href: '#about',
+    },
+  },
+  {
+    _id: '3',
+    title: 'Projects',
+    link: {
+      type: 'anchor',
+      href: '#projects',
+    },
+  },
+  {
+    _id: '4',
+    title: 'Skills',
+    link: {
+      type: 'anchor',
+      href: '#skills',
+    },
+  },
+  {
+    _id: '5',
+    title: 'Contact',
+    link: {
+      type: 'anchor',
+      href: '#contact',
+    },
+  },
+  {
+    _id: '6',
+    title: 'Blog',
+    link: {
+      type: 'route',
+      href: '/blog',
+    },
+  },
+];
+
+export { navListBlog, navListPortfolio };

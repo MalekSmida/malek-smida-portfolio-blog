@@ -77,3 +77,9 @@ export interface Skill {
   label: string;
   category: SkillCategoryEnum;
 }
+
+export interface INavButton {
+  _id: string;
+  title: string;
+  link: { type: 'anchor'; href: string } | { type: 'route'; href: string };
+}

@@ -3,8 +3,15 @@ import React from 'react';
 import Head from 'next/head';
 
 // local files
-import { NavHeader, BackToTopButton, Footer, Banner } from '../../components';
+import {
+  NavHeader,
+  BackToTopButton,
+  Footer,
+  Banner,
+  ProgressScrollBar,
+} from '../../components';
 import useShowBackToTop from '../../hooks/useShowBackToTop';
+import { navListBlog } from '../../data';
 
 // typing
 interface PropsMain {
@@ -29,8 +36,10 @@ const Main: React.FC<PropsMain> = ({ children, hideBanner }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="mx-auto flex w-full max-w-6xl flex-col items-center">
-        <NavHeader />
+      <main className="mx-auto flex w-full max-w-screen-xl flex-col items-center px-4 sm:px-6">
+        <ProgressScrollBar />
+
+        <NavHeader navList={navListBlog} />
         {!hideBanner && <Banner />}
         {children}
       </main>
