@@ -1,4 +1,3 @@
-export { default as Footer } from './Footer';
 export { default as Intro } from './Intro';
 export { default as About } from './About';
 export { default as Career } from './Career';
