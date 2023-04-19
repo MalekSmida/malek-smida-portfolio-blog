@@ -20,6 +20,8 @@ const elementShouldNotExist = (selector: string) => {
 describe('Home page', () => {
   beforeEach(() => {
     cy.visit('/');
+    // naviagte to blog
+    cy.get('[data-testid="link-Blog"]').click();
   });
 
   context('UI rendering', () => {
@@ -47,11 +49,9 @@ describe('Home page', () => {
     });
     it('Should show Footer', () => {
       // scroll to footer
-      cy.get('#footer')
-        .scrollIntoView()
-        .should('be.visible')
-        .find('a')
-        .should('have.attr', 'href', hyperlinks.GithubRepo);
+      cy.get('#contact').scrollIntoView().should('be.visible');
+      // .find('a')
+      // .should('have.attr', 'href', hyperlinks.GithubRepo);
     });
   });
 

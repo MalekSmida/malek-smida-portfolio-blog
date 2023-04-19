@@ -29,11 +29,13 @@ const NavHeader: React.FC<PropsNavHeader> = ({ navList }) => {
       ) : (
         <Link href={link.href}>
           {currentRoute.pathname === link.href ? (
-            <span className="relative cursor-pointer select-none text-sm font-medium text-primary-color before:absolute before:-bottom-1 before:h-0.5 before:w-full before:bg-primary-color">
+            <span className="relative cursor-pointer select-none text-sm font-medium text-primary-color before:absolute before:-bottom-1 before:h-0.5 before:w-full before:bg-primary-color"
+            data-testid={`link-${title}`}>
               {title}
             </span>
           ) : (
-            <span className="relative cursor-pointer select-none text-sm font-medium text-gray-500 transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100">
+            <span className="relative cursor-pointer select-none text-sm font-medium text-gray-500 transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100"
+            data-testid={`link-${title}`}>
               {title}
             </span>
           )}
