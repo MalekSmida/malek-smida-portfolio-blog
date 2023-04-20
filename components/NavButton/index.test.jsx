@@ -19,7 +19,7 @@ const mockButton = {
 describe('NavButton', () => {
   it('Should renders anchor button', () => {
     render(<NavButton {...mockButton} isSelected={false} />);
-    const buttonElement = screen.getbyText(/nav-button/i);
+    const buttonElement = screen.getByTestId(`navButton-${mockButton.title}`);
     expect(buttonElement).toBeInTheDocument();
   });
 
