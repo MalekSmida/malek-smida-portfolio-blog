@@ -21,7 +21,7 @@ describe('Home page', () => {
   beforeEach(() => {
     cy.visit('/');
     // naviagte to blog
-    cy.get('[data-testid="link-Blog"]').click();
+    cy.get('[data-testid="navButton-Blog"]').click();
   });
 
   context('UI rendering', () => {
