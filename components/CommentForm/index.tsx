@@ -74,6 +74,7 @@ const CommentForm: React.FC<PropsComment> = ({ post }) => {
           className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-primary-color"
           placeholder="John Doe"
           type="text"
+          data-testid="input-name"
         />
       </label>
       <label className="mb-5 block">
@@ -83,6 +84,7 @@ const CommentForm: React.FC<PropsComment> = ({ post }) => {
           className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-primary-color"
           placeholder="example@gmail.com"
           type="email"
+          data-testid="input-email"
         />
       </label>
       <label className="block">
@@ -92,6 +94,7 @@ const CommentForm: React.FC<PropsComment> = ({ post }) => {
           className="form-textarea mt-1 block w-full rounded border py-2 px-3 shadow outline-primary-color"
           placeholder="What is on your mind?"
           rows={4}
+          data-testid="input-comment"
         />
       </label>
 
@@ -106,6 +109,7 @@ const CommentForm: React.FC<PropsComment> = ({ post }) => {
         type="submit"
         disabled={isLoading}
         className="focus:shadow-outline cursor-pointer rounded bg-primary-color py-2 px-4 font-bold text-white shadow transition-colors duration-200 ease-in-out hover:bg-indigo-700 focus:outline-none disabled:bg-indigo-700"
+        data-testid="input-submit"
       />
     </form>
   );
