@@ -1,9 +1,8 @@
 // node modules
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 // local files
+import NavButton from '../NavButton';
 import { INavButton } from '../../typings';
 
 interface PropsNavHeader {
@@ -16,33 +15,6 @@ interface PropsNavHeader {
 const NavHeader: React.FC<PropsNavHeader> = ({ navList }) => {
   // hooks
   const currentRoute = useRouter();
-
-  // components
-  const NavButton: React.FC<INavButton> = ({ title, link }) => (
-    <li>
-      {link.type === 'anchor' ? (
-        <AnchorLink href={link.href}>
-          <span className="relative cursor-pointer select-none text-sm font-medium text-gray-500 transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100">
-            {title}
-          </span>
-        </AnchorLink>
-      ) : (
-        <Link href={link.href}>
-          {currentRoute.pathname === link.href ? (
-            <span className="relative cursor-pointer select-none text-sm font-medium text-primary-color before:absolute before:-bottom-1 before:h-0.5 before:w-full before:bg-primary-color"
-            data-testid={`link-${title}`}>
-              {title}
-            </span>
-          ) : (
-            <span className="relative cursor-pointer select-none text-sm font-medium text-gray-500 transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100"
-            data-testid={`link-${title}`}>
-              {title}
-            </span>
-          )}
-        </Link>
-      )}
-    </li>
-  );
 
   return (
     <header
@@ -61,6 +33,7 @@ const NavHeader: React.FC<PropsNavHeader> = ({ navList }) => {
               key={item._id}
               title={item.title}
               link={item.link}
+              isSelected={currentRoute.pathname === item.link.href}
             />
           ))}
         </ul>

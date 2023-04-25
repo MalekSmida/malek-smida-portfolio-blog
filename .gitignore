@@ -16,6 +16,7 @@
 # next.js
 /.next/
 /out/
+.swc
 
 # production
 /build
@@ -40,3 +41,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# ESLint
+.eslintcache
