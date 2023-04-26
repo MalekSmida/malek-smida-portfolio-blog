@@ -1,16 +1,17 @@
+// node modules
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 // local files
 import BackToTopButton from './';
 
-describe('Component: BackToTopButton', () => {
+describe('Component BackToTopButton', () => {
   const user = userEvent.setup();
   beforeEach(() => {
     render(<BackToTopButton />);
   });
 
-  it('Should render button', async () => {
+  it('Should render without errors', async () => {
     const buttonElement = screen.getByRole('button');
     expect(buttonElement).toBeInTheDocument();
   });
