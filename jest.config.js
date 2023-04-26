@@ -17,6 +17,8 @@ const customJestConfig = {
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
+  // Add more setup options before each test is run
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
