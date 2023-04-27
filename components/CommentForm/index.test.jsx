@@ -3,30 +3,11 @@ import { render, screen } from '@testing-library/react';
 // local files
 import CommentForm from './';
 
-const mockPost = {
-  _id: '0',
-  _createdAt: '',
-  title: '',
-  author: {
-    name: '',
-    image: '',
-  },
-  comments: [],
-  description: '',
-  mainImage: {
-    assets: {
-      url: '',
-    },
-  },
-  slug: {
-    current: '',
-  },
-  body: null,
-};
+const mockPostId = '0';
 
 describe('CommentForm Component', () => {
   beforeEach(() => {
-    render(<CommentForm post={mockPost} />);
+    render(<CommentForm postId={mockPostId} />);
   });
 
   it('Should render all inputs', async () => {

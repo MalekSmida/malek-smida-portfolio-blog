@@ -12,9 +12,9 @@ const mockComments = [
     _createdAt: '',
     _updatedAt: '',
     approved: true,
-    comment: "'first comment'",
+    comment: 'first comment',
     email: '',
-    name: '',
+    name: 'First Name',
     post: {
       _ref: '',
       _type: '',
@@ -28,9 +28,9 @@ const mockComments = [
     _createdAt: '',
     _updatedAt: '',
     approved: true,
-    comment: "'second comment'",
+    comment: 'second comment',
     email: '',
-    name: '',
+    name: 'Second Name',
     post: {
       _ref: '',
       _type: '',
@@ -39,15 +39,41 @@ const mockComments = [
 ];
 
 describe('CommentList Component', () => {
-  beforeEach(() => {
-    render(<CommentList post={mockComments} />);
+  it('Should render empty message when no comments', async () => {
+    render(<CommentList comments={[]} />);
+
+    // show title
+    const titleElement = screen.getByText('Comments');
+    expect(titleElement).toBeInTheDocument();
+
+    // show empty description
+    const messageElement = screen.getByText(
+      'No comments, be the first to add one ✨'
+    );
+    expect(messageElement).toBeInTheDocument();
   });
 
   it('Should render all comments', async () => {
-    const firstComment = screen.getByText('first comment');
+    render(<CommentList comments={mockComments} />);
+
+    const titleElement = screen.getByText('Comments');
+    expect(titleElement).toBeInTheDocument();
+    // no empty message shown
+    const messageElement = screen.queryByText(
+      'No comments, be the first to add one ✨'
+    );
+    expect(messageElement).toBeNull();
+
+    // first message is shown
+    const firstName = screen.getByText(/First Name/);
+    expect(firstName).toBeInTheDocument();
+    const firstComment = screen.getByText(/first comment/);
     expect(firstComment).toBeInTheDocument();
 
-    const secondComment = screen.getByText('first comment');
+    // second message is shown
+    const secondName = screen.getByText(/Second Name/);
+    expect(secondName).toBeInTheDocument();
+    const secondComment = screen.getByText(/second comment/);
     expect(secondComment).toBeInTheDocument();
   });
 });

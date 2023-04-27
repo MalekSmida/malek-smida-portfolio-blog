@@ -9,6 +9,9 @@ import useCreateComment from '../../hooks/useCreateComment';
 import InputField from '../InputField';
 
 // typing
+interface PropsCommentForm {
+  postId: string;
+}
 export interface IFormInput {
   _id: string;
   name: string;
@@ -19,7 +22,7 @@ export interface IFormInput {
 /**
  * Comment form by the end of Post page
  */
-const CommentForm: React.FC<PropsComment> = ({ post }) => {
+const CommentForm: React.FC<PropsCommentForm> = ({ postId }) => {
   // hooks
   const {
     register,
@@ -55,7 +58,7 @@ const CommentForm: React.FC<PropsComment> = ({ post }) => {
       <h3 className="text-3xl">Leave a comment bellow</h3>
       <hr className="mt-2 py-4" />
 
-      <input {...register('_id')} type="hidden" name="_id" value={post._id} />
+      <input {...register('_id')} type="hidden" name="_id" value={postId} />
 
       <InputField
         name="name"

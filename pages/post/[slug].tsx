@@ -66,8 +66,8 @@ function Post({ post }: PropsPost) {
         </div>
       </article>
 
-      <CommentForm post={post} />
-      <CommentList post={post} />
+      <CommentForm postId={post._id} />
+      <CommentList comments={post.comments} />
     </Main>
   );
 }
