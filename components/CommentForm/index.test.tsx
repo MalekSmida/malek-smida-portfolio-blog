@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 // local files
-import CommentForm from './';
+import CommentForm from '.';
 
 const mockPostId = '0';
 

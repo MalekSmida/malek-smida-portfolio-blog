@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 // local files
-import Banner from './';
+import Banner from '.';
 
 describe('Banner Component', () => {
   beforeEach(() => {

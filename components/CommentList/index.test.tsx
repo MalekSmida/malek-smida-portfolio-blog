@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 // local files
-import CommentList from './';
+import CommentList from '.';
 
 const mockComments = [
   {
