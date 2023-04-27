@@ -1,5 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
 
 // local files
 import CommentForm from './';
@@ -26,7 +25,6 @@ const mockPost = {
 };
 
 describe('CommentForm Component', () => {
-  const user = userEvent.setup();
   beforeEach(() => {
     render(<CommentForm post={mockPost} />);
   });
@@ -48,22 +46,5 @@ describe('CommentForm Component', () => {
     expect(submitElement).toBeInTheDocument();
   });
 
-  describe('CommentForm Validation', () => {
-    it.only('Should validate input name', async () => {
-      // validate empty input
-      let errorElements = screen.queryAllByText('Invalid');
-      expect(errorElements.length).toBe(0);
-      // TODO:
-      // const submitElement = screen.getByTestId('input-submit');
-      // await user.click(submitElement);
-
-      // errorElements = screen.getAllByText('Invalid');
-      // expect(errorElements.length).toBe(3);
-
-      // const inputName = screen.getByLabelText('Name');
-      // await user.type(inputName, 'Fake Name');
-    });
-
-    it.todo('Should submit valid inputs');
-  });
+  // No need to test submit and validation => handled by react-form-hook
 });
