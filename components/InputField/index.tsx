@@ -68,6 +68,7 @@ const InputField: React.FC<PropsInputField> = ({
         <span
           className="absolute bottom-3 right-3 text-sm text-red-300"
           role="alert"
+          aria-label={name}
         >
           Invalid
         </span>

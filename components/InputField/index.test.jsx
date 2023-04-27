@@ -2,70 +2,88 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 // local files
-import CommentForm from './';
+import InputField from './';
 
-const mockPost = {
-  _id: '0',
-  _createdAt: '',
-  title: '',
-  author: {
-    name: '',
-    image: '',
-  },
-  comments: [],
-  description: '',
-  mainImage: {
-    assets: {
-      url: '',
+// mock
+const mockData = [
+  {
+    props: {
+      name: 'name',
+      label: 'Full Name',
+      placeholder: 'John Doe',
+      type: 'text',
     },
+    testData: 'Ezdin Ben Ghdhehom',
   },
-  slug: {
-    current: '',
+  {
+    props: {
+      name: 'email',
+      label: 'Email Address',
+      placeholder: 'example@email.com',
+      type: 'email',
+    },
+    testData: 'fake@email.com',
   },
-  body: null,
-};
+  {
+    props: {
+      name: 'comment',
+      label: 'Commet',
+      placeholder: 'Just type something',
+      type: 'textarea',
+    },
+    testData: 'Hello world',
+  },
+];
 
-describe('CommentForm Component', () => {
+describe('InputField Component', () => {
+  // mock function
+  const register = jest.fn();
+  // event instance
   const user = userEvent.setup();
-  beforeEach(() => {
-    render(<CommentForm post={mockPost} />);
-  });
 
-  it('Should render all inputs', async () => {
-    const titleElement = screen.getByText('Leave a comment bellow');
-    expect(titleElement).toBeInTheDocument();
+  describe.each(mockData)('Input type: $props.name', ({ props, testData }) => {
+    // should show error
+    let isError = false;
 
-    const inputName = screen.getByLabelText('Name');
-    expect(inputName).toBeInTheDocument();
-
-    const inputEmail = screen.getByLabelText('Email');
-    expect(inputEmail).toBeInTheDocument();
-
-    const inputComment = screen.getByLabelText('Comment');
-    expect(inputComment).toBeInTheDocument();
-
-    const submitElement = screen.getByTestId('input-submit');
-    expect(submitElement).toBeInTheDocument();
-  });
-
-  describe('CommentForm Validation', () => {
-    // mock function
-    const handleCreateComment = jest.fn();
-
-    it.only('Should validate input name', async () => {
-      // validate empty input
-      let errorElement = screen.getByText('▪️ The Name Field is invalid');
-      expect(errorElement).toBeNull();
-      const submitElement = screen.getByTestId('input-submit');
-      await user.click(submitElement);
-
-      errorElement = screen.getByText('▪️ The Name Field is invalid');
-      expect(errorElement).toBeInTheDocument();
-
-      const inputName = screen.getByLabelText('Name');
-      await user.type(inputName, 'Fake Name');
+    it('Should render empty input', () => {
+      // render component
+      render(<InputField {...props} error={isError} register={register} />);
+      const inputElement = screen.getByRole('textbox');
+      expect(inputElement).toBeInTheDocument();
+      expect(inputElement).toHaveValue('');
     });
 
-    it.todo('Should submit valid inputs');
+    it('Should focus and type into input', async () => {
+      render(<InputField {...props} error={isError} register={register} />);
+
+      const inputElement = screen.getByRole('textbox');
+
+      // 1- focus
+      expect(inputElement).not.toHaveFocus();
+      inputElement.focus();
+      expect(inputElement).toHaveFocus();
+
+      // 2- type
+      await user.type(inputElement, testData);
+      expect(inputElement).toHaveValue(testData);
+      await user.clear(inputElement);
+      expect(inputElement).toHaveValue('');
+    });
+
+    it('Should show error', () => {
+      // we test condition of error not error itself as we have a library that handle input validation
+      // should render with no error
+      const { rerender } = render(
+        <InputField {...props} error={isError} register={register} />
+      );
+      let alertElement = screen.queryByRole('alert');
+      expect(alertElement).toBeNull();
+
+      // should show error message when there is an error
+      isError = true;
+      rerender(<InputField {...props} error={isError} register={register} />);
+      alertElement = screen.getByRole('alert');
+      expect(alertElement).toBeInTheDocument();
+    });
   });
 });

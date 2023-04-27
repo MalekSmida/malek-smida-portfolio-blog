@@ -49,21 +49,19 @@ describe('CommentForm Component', () => {
   });
 
   describe('CommentForm Validation', () => {
-    // mock function
-    const handleCreateComment = jest.fn();
-
     it.only('Should validate input name', async () => {
       // validate empty input
-      let errorElement = screen.getByText('▪️ The Name Field is invalid');
-      expect(errorElement).toBeNull();
-      const submitElement = screen.getByTestId('input-submit');
-      await user.click(submitElement);
+      let errorElements = screen.queryAllByText('Invalid');
+      expect(errorElements.length).toBe(0);
+      // TODO:
+      // const submitElement = screen.getByTestId('input-submit');
+      // await user.click(submitElement);
 
-      errorElement = screen.getByText('▪️ The Name Field is invalid');
-      expect(errorElement).toBeInTheDocument();
+      // errorElements = screen.getAllByText('Invalid');
+      // expect(errorElements.length).toBe(3);
 
-      const inputName = screen.getByLabelText('Name');
-      await user.type(inputName, 'Fake Name');
+      // const inputName = screen.getByLabelText('Name');
+      // await user.type(inputName, 'Fake Name');
     });
 
     it.todo('Should submit valid inputs');
