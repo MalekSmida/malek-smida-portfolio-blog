@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 // local files
-import BackToTopButton from './';
+import BackToTopButton from '.';
 
 describe('BackToTopButton Component', () => {
   const user = userEvent.setup();

@@ -5,7 +5,7 @@ import CommentList from './';
 
 const mockComments = [
   {
-    _id: '',
+    _id: '0',
     _ref: '',
     _rev: '',
     _type: '',
@@ -21,7 +21,7 @@ const mockComments = [
     },
   },
   {
-    _id: '',
+    _id: '1',
     _ref: '',
     _rev: '',
     _type: '',
