@@ -24,6 +24,7 @@
     "@portabletext/react": "^2.0.0",
     "@sanity/client": "^3.0.4",
     "@sanity/image-url": "^1.0.1",
+    "classnames": "^2.3.2",
     "next": "^12.3.3",
     "next-sanity": "^1.0.9",
     "react": "^18.2.0",

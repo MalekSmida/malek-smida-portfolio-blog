@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 // local files
 import BackToTopButton from './';
 
-describe('Component BackToTopButton', () => {
+describe('BackToTopButton Component', () => {
   const user = userEvent.setup();
   beforeEach(() => {
     render(<BackToTopButton />);

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 // local files
 import Banner from './';
 
-describe('Component Banner', () => {
+describe('Banner Component', () => {
   beforeEach(() => {
     render(<Banner />);
   });
