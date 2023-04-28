@@ -2,8 +2,9 @@ import { render, screen } from '@testing-library/react';
 
 // local files
 import CommentList from '.';
+import { Post } from '../../typings';
 
-const mockComments = [
+const mockComments: Post['comments'] = [
   {
     _id: '0',
     _ref: '',

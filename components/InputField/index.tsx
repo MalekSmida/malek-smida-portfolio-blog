@@ -4,12 +4,12 @@ import { UseFormRegister } from 'react-hook-form';
 import cx from 'classnames';
 
 // local files
-import { IFormInput } from '../CommentForm';
+import { IFormInput, FormInputName } from '../CommentForm';
 
 // typing
-interface PropsInputField {
+export interface PropsInputField {
   register: UseFormRegister<IFormInput>;
-  name: keyof IFormInput;
+  name: FormInputName;
   label: string;
   placeholder: string;
   type: HTMLInputTypeAttribute;

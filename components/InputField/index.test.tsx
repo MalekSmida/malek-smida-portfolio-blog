@@ -3,8 +3,8 @@ import userEvent from '@testing-library/user-event';
 
 // local files
 import InputField from '.';
-
-// TODO: ts
+import { UseFormRegister } from 'react-hook-form';
+import { IFormInput, FormInputName } from '../CommentForm';
 
 // mock
 const mockData = [
@@ -39,7 +39,7 @@ const mockData = [
 
 describe('InputField Component', () => {
   // mock function
-  const register = jest.fn();
+  const register: UseFormRegister<IFormInput> = jest.fn();
   // event instance
   const user = userEvent.setup();
 
@@ -49,14 +49,28 @@ describe('InputField Component', () => {
 
     it('Should render empty input', () => {
       // render component
-      render(<InputField {...props} error={isError} register={register} />);
+      render(
+        <InputField
+          {...props}
+          name={props.name as FormInputName}
+          error={isError}
+          register={register}
+        />
+      );
       const inputElement = screen.getByRole('textbox');
       expect(inputElement).toBeInTheDocument();
       expect(inputElement).toHaveValue('');
     });
 
     it('Should focus and type into input', async () => {
-      render(<InputField {...props} error={isError} register={register} />);
+      render(
+        <InputField
+          {...props}
+          name={props.name as FormInputName}
+          error={isError}
+          register={register}
+        />
+      );
 
       const inputElement = screen.getByRole('textbox');
 
@@ -76,14 +90,26 @@ describe('InputField Component', () => {
       // we test condition of error not error itself as we have a library that handle input validation
       // should render with no error
       const { rerender } = render(
-        <InputField {...props} error={isError} register={register} />
+        <InputField
+          {...props}
+          name={props.name as FormInputName}
+          error={isError}
+          register={register}
+        />
       );
       let alertElement = screen.queryByRole('alert');
       expect(alertElement).toBeNull();
 
       // should show error message when there is an error
       isError = true;
-      rerender(<InputField {...props} error={isError} register={register} />);
+      rerender(
+        <InputField
+          {...props}
+          name={props.name as FormInputName}
+          error={isError}
+          register={register}
+        />
+      );
       alertElement = screen.getByRole('alert');
       expect(alertElement).toBeInTheDocument();
     });

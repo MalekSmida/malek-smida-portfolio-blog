@@ -19,6 +19,8 @@ export interface IFormInput {
   comment: string;
 }
 
+export type FormInputName = keyof IFormInput;
+
 /**
  * Comment form by the end of Post page
  */
