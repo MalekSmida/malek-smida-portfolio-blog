@@ -15,3 +15,23 @@ Now you can do the following things:
 ```bash
 yarn global add @sanity/cli
 ```
+
+## Fix vulnerabilities\*
+
+[https://thomaschaplin.medium.com/how-to-fix-yarn-audit-issues-ff5840f712d1]
+
+```bash
+# in package.js change "npm": "your npm version"
+
+npm i --package-lock-only
+
+rm yarn.lock
+
+npm audit fix --force
+
+yarn import
+
+rm package-lock.json
+
+# revert packages json
+```
