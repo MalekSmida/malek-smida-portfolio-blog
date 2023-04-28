@@ -1,4 +1,4 @@
-# My blog
+# My Portfolio and Blog
 
 This example shows how to use [Next.js](https://nextjs.org/) [(v12)](https://nextjs.org/blog/next-12), [Incremental Static Regeneration](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) (ISR), [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3), TypeScript and [Sanity CMS](https://www.sanity.io/) (GROQ query language)
 
