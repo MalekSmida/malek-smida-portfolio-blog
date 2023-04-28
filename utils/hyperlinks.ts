@@ -4,7 +4,7 @@ const hyperlinks = {
   Portfolio: 'https://www.maleksmida.vercel.app/',
   Blog: 'https://www.maleksmida.vercel.app/blog/',
   LinkedIn: 'https://www.linkedin.com/in/maleksmida/',
-  GithubRepo: 'https://github.com/MalekSmida/malek-smida-blog-next-sanity',
+  GithubRepo: 'https://github.com/MalekSmida/malek-smida-portfolio-blog',
 };
 
 export default hyperlinks;
