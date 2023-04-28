@@ -10,7 +10,7 @@ import hyperlinks from '../../utils/hyperlinks';
 function Intro() {
   return (
     <section className="mx-auto grid grid-cols-1 gap-8 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
-      <div className="group relative order-last h-full">
+      <div className="group relative order-last h-full max-w-lg lg:max-w-none">
         <svg
           className="absolute bottom-6 right-0 transition-transform duration-1000 ease-in-out group-hover:rotate-12"
           height="100%"
