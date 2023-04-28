@@ -10,3 +10,4 @@ export { default as ProgressScrollBar } from './ProgressScrollBar';
 export { default as ProjectCard } from './ProjectCard';
 export { default as SkillBlock } from './SkillBlock';
 export { default as NavButton } from './NavButton';
+export { default as InputField } from './InputField';

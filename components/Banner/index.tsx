@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 /**
- * Banner shown in home screen
+ * Banner shown in blog screen
  *
  * @type {React.FC}
  */
@@ -10,7 +10,7 @@ function Banner() {
   return (
     <>
       <div
-        className="flex w-full items-center justify-between px-6 pt-5 pb-10 md:px-20"
+        className="flex w-full items-center justify-between px-6 pb-10 pt-5 md:px-20"
         data-testid="banner-container"
       >
         <div className="space-y-5 text-gray-700">

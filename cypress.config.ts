@@ -10,3 +10,6 @@ export default defineConfig({
     },
   },
 });
+
+// config cypress ts with jest/react-testing ts
+// https://github.com/cypress-io/cypress/issues/22059#issuecomment-1297135038

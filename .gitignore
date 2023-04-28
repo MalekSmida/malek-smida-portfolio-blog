@@ -8,7 +8,6 @@
 # Sanity
 /sanityblog/node_modules
 /sanityblog/dist
-/sanityblog/yarn.lock
 
 # testing
 /coverage

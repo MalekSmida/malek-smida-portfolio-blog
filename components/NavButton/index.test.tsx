@@ -2,12 +2,13 @@ import { render, screen } from '@testing-library/react';
 
 // local files
 import NavButton from './index';
+import { INavButton } from '../../typings';
 // import { INavButton } from '../../typings';
 
 /**
  * mockButton: INavButton;
  */
-const mockButton = {
+const mockButton: INavButton = {
   _id: '0',
   title: 'buttonTest',
   link: {
