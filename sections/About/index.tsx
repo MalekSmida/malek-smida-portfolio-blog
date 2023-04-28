@@ -14,7 +14,7 @@ function About() {
     >
       <div className="z-10 flex flex-col items-center justify-center lg:py-16">
         <div className="flex w-full justify-center">
-          <span className="mx-8 h-32 w-32 rounded-full bg-green-500 transition-transform duration-300 ease-in-out hover:scale-90"></span>
+          <span className="mr-8 h-24 w-24 rounded-full bg-green-500 transition-transform duration-300 ease-in-out hover:scale-90 md:h-32 md:w-32"></span>
           <div className="rounded-full border-2 border-dashed border-gray-400 p-0.5">
             <Image
               src="/static/pictures/MalekSmida_Tozeur.jpg"
@@ -42,7 +42,7 @@ function About() {
               unoptimized={true}
             />
           </div>
-          <span className="mx-8 h-16 w-16 rounded-full bg-orange-400 transition-transform duration-300 ease-in-out hover:scale-90"></span>
+          <span className="ml-8 h-12 w-12 rounded-full bg-orange-400 transition-transform duration-300 ease-in-out hover:scale-90 md:h-16 md:w-16"></span>
         </div>
 
         {/* <div className="absolute bottom-10 max-w-sm rounded-2xl bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 p-1 shadow-xl transition-transform duration-300 ease-in-out hover:scale-105">
