@@ -14,8 +14,8 @@ Preview live [Wanderer Bolg](https://www.maleksmida.blog/):
 ## How to use
 
 1- Download or clone the project\
-2- Run `$ npm install` to add the dependencies\
-3- Run the project locally `$ npm run dev`\
+2- Run `$ yarn` to add the dependencies\
+3- Run the project locally `$ yarn dev`\
 
 In order to use Sanity CMS follow this steps:
 
@@ -34,38 +34,42 @@ SANITY_API_TOKEN=
 cd sanityblog
 ```
 
-4- Run `$ npm install` to add the dependencies\
+4- Run `$ yarn` to add the dependencies\
 5- Run Sanity dashboard locally `$ sanity start`\
 
 ## Available scripts
 
 In the project directory, you can run:
 
-### `npm run dev`
+### `yarn dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### `npm run build`
+### `yarn build`
 
 Builds the app for production to the `.next` folder.\
 It correctly bundles Next in production mode and optimizes the build for the best performance.
 
-### `npm run cypress:open`
+### `yarn test`
+
+It will run unit and integration tests using Jest and React Testing Library
+
+### `yarn cypress:open`
 
 It will opens Cypress window so that you can interact directly with tests.\Check [Cypress docs](https://docs.cypress.io/guides/guides/command-line#cypress-open) for more details
 
-### `npm run e2e`
+### `yarn e2e`
 
 It run e2e tests by Cypress.\
 This script could be included in your CI pipeline.\
 Check [Cypress docs](https://docs.cypress.io/guides/guides/command-line#cypress-run) for more details
 
-### `npm run lint`
+### `yarn lint`
 
 Run ESLint to statically analyse your code
 
-### `npm run format`
+### `yarn format`
 
 Run Prettier to manually format your entire code
 
