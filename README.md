@@ -4,7 +4,7 @@ This example shows how to use [Next.js](https://nextjs.org/) [(v12)](https://nex
 
 ## Preview
 
-Preview live [Wanderer Bolg](https://www.maleksmida.blog/):
+Preview live [Portfolio & Blog](https://maleksmida.vercel.app/):
 
 [![image](https://user-images.githubusercontent.com/58492485/235106988-fc3836ff-1bf2-4bd8-a22c-25d2766b2fcf.png)](https://www.maleksmida.vercel.app/)
 [![image](https://user-images.githubusercontent.com/58492485/235107232-6995aed2-213c-423e-bac9-a7be6fca2e6d.png)](https://www.maleksmida.vercel.app/)
