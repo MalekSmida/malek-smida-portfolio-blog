@@ -1,6 +1,6 @@
 const hyperlinks = {
   CVPDF:
-    'https://drive.google.com/file/d/1Gu9iNIKVD-SWGSukahuxLPiy7cZJ0BNK/view?usp=share_link',
+    'https://drive.google.com/file/d/1Scx80tQSkrQiJb-D3k_xvNf9zTVRsNH7/view?usp=sharing',
   Portfolio: 'https://www.maleksmida.vercel.app/',
   Blog: 'https://www.maleksmida.vercel.app/blog/',
   LinkedIn: 'https://www.linkedin.com/in/maleksmida/',
